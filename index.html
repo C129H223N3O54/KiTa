@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Förderverein Kita WirbelWind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7faf5;
+      --surface: #ffffff;
+      --text: #213024;
+      --text-muted: #5d6e60;
+      --border: rgba(60,120,70,0.12);
+
+      --green: #4caf50;
+      --green-dark: #2e7d32;
+      --green-light: #e8f5e9;
+
+      --yellow: #fbbf24;
+      --yellow-dark: #b45309;
+      --yellow-light: #fff8e1;
+
+      --sky: #4fb6e8;
+      --sky-dark: #1d6fa5;
+      --sky-light: #e6f6fd;
+
+      --red: #ef4444;
+      --red-light: #fdecea;
+
+      --purple: #8b5cf6;
+      --purple-light: #f1ebfe;
+
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10160f;
+        --surface: #1a2418;
+        --text: #ecf3ea;
+        --text-muted: #9bb09c;
+        --border: rgba(255,255,255,0.08);
+        --green-light: #16301a;
+        --yellow-light: #2a2106;
+        --sky-light: #0d2735;
+        --red-light: #2a1414;
+        --purple-light: #211a30;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--surface);
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 14px rgba(40,90,40,0.08);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .nav-brand img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-brand span {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      display: none;
+    }
+
+    @media (min-width: 480px) {
+      .nav-brand span { display: inline; }
+    }
+
+    .nav-links { display: flex; gap: 1.4rem; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 700;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--green-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      background:
+        linear-gradient(180deg, rgba(230,246,253,0.88) 0%, rgba(232,245,233,0.80) 55%, rgba(255,248,225,0.55) 100%),
+        url('hero.jpg') center 40% / cover no-repeat;
+      padding: 2.5rem 1.5rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 64px;
+      background: var(--bg);
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+
+    .hero-logo {
+      max-width: 360px;
+      width: 90%;
+      height: auto;
+      margin: 0 auto 0.5rem;
+      display: block;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18));
+    }
+
+    .hero p {
+      color: var(--text);
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(2px);
+      border-radius: var(--radius-lg);
+      padding: 0.85rem 1.25rem;
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      font-weight: 600;
+    }
+
+    .hero-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      border-radius: 99px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-outline { background: #fff; color: var(--green-dark); border: 2px solid var(--green); }
+    .btn-outline:hover { background: var(--green-light); }
+
+    /* ── SECTION WRAPPER ── */
+    .section {
+      padding: 3rem 1.25rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .divider {
+      width: 56px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--red), var(--yellow), var(--green), var(--sky), var(--purple));
+      border-radius: 4px;
+      margin: 0.5rem 0 0.75rem;
+    }
+
+    .section-sub {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      max-width: 560px;
+    }
+
+    hr.sep {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── PROJECT CARDS ── */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 0.5px solid var(--border);
+      padding: 1.25rem;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(40,90,40,0.12); }
+
+    .card-icon {
+      font-size: 26px;
+      width: 52px; height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.85rem;
+    }
+    .icon-red    { background: var(--red-light); }
+    .icon-yellow { background: var(--yellow-light); }
+    .icon-green  { background: var(--green-light); }
+    .icon-sky    { background: var(--sky-light); }
+    .icon-purple { background: var(--purple-light); }
+
+    .card h3 { font-weight: 700; font-size: 0.975rem; margin-bottom: 0.4rem; }
+    .card p  { font-size: 0.875rem; color: var(--text-muted); line-height: 1.55; }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 9px;
+      border-radius: 99px;
+      margin-top: 0.65rem;
+      background: var(--green-light);
+      color: var(--green-dark);
+    }
+
+    .badge-new {
+      display: inline-block;
+      background: var(--yellow-light);
+      color: var(--yellow-dark);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 1px 7px;
+      border-radius: 99px;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    /* ── VORSTAND ── */
+    .vorstand {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .person {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+
+    .avatar-wrap {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--sky-light);
+      margin: 0 auto 0.75rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--sky-dark);
+      border: 2px dashed var(--sky);
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .person h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .person .role { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* ── DOWNLOAD BOX ── */
+    .download-box {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .download-box h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+
+    .download-box p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.925rem;
+      max-width: 420px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .download-box .btn-primary {
+      background: var(--yellow);
+      color: #4a3000;
+    }
+
+    .pdf-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 99px;
+      padding: 0.35rem 1rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.82rem;
+      margin-top: 0;
+    }
+
+    footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    footer a:hover { color: #fff; }
+    footer p + p { margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <nav>
+    <a class="nav-brand" href="#">
+      <img src="logo.png" alt="Förderverein Kita WirbelWind Logo">
+      <span>Förderverein WirbelWind</span>
+    </a>
+    <div class="nav-links">
+      <a href="#projekte">Projekte</a>
+      <a href="#vorstand">Vorstand</a>
+      <a href="#mitmachen">Mitmachen</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <img class="hero-logo" src="logo.png" alt="Förderverein Kita WirbelWind">
+    <p>Wir unterstützen die Kita WirbelWind der TfK-Kitas — für mehr Freude, bessere Ausstattung und tolle Erlebnisse für alle Kinder.</p>
+    <div class="hero-btns">
+      <a href="#projekte" class="btn btn-primary">Unsere Projekte</a>
+      <a href="#mitmachen" class="btn btn-outline">Mitglied werden</a>
+    </div>
+  </header>
+
+  <!-- ══ PROJEKTE ══ -->
+  <section id="projekte" class="section">
+    <h2 class="section-title">Was wir für die Kita getan haben</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Seit unserer Gründung unterstützen wir die Kita WirbelWind mit Sachspenden, Veranstaltungen und tatkräftiger Hilfe.</p>
+
+    <div class="projects">
+
+      <div class="card">
+        <div class="card-icon icon-red">🎠</div>
+        <h3>Neue Spielgeräte</h3>
+        <p>Kletterturm und Rutsche für das Außengelände angeschafft. Die Kinder lieben es!</p>
+        <span class="tag">Ausstattung</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-yellow">🎉</div>
+        <h3>Sommerfest 2023</h3>
+        <p>Gemeinsames Grillfest mit Spielen, Basteln und einem Spendenbasar für alle Familien.</p>
+        <span class="tag">Veranstaltung</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-green">📚</div>
+        <h3>Bücher &amp; Lernmaterial</h3>
+        <p>Neue Kinderbücher und Bastelmaterial für alle Gruppen angeschafft.</p>
+        <span class="tag">Ausstattung</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-sky">🌳</div>
+        <h3>Gartenumgestaltung</h3>
+        <p>Hochbeete gebaut und Wildblumenwiese angelegt — zusammen mit Eltern und Erzieherinnen.</p>
+        <span class="tag">Außengelände</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-purple">🎭</div>
+        <h3>Theaterbesuch</h3>
+        <p>Gemeinsamer Ausflug zum Kindertheater für alle Kitagruppen — ein unvergesslicher Tag!</p>
+        <span class="tag">Erlebnis</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-yellow">🔧</div>
+        <h3>Eltern-Bautag <span class="badge-new">2024</span></h3>
+        <p>Neues Wetterdach für die Veranda selbst gebaut — 12 helfende Hände an einem Samstag.</p>
+        <span class="tag">Außengelände</span>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <!-- ══ VORSTAND ══ -->
+  <section id="vorstand" class="section">
+    <h2 class="section-title">Unser Vorstand</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Der Förderverein wird ehrenamtlich von Eltern der Kita WirbelWind geführt.</p>
+
+    <div class="vorstand">
+
+      <div class="person">
+        <!-- Foto: <img src="foto-vorname.jpg" alt="Vorname Nachname"> in .avatar-wrap einfügen -->
+        <div class="avatar-wrap">👤</div>
+        <h3>Vorname Nachname</h3>
+        <p class="role">1. Vorsitzende/r</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar-wrap">👤</div>
+        <h3>Vorname Nachname</h3>
+        <p class="role">2. Vorsitzende/r</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar-wrap">👤</div>
+        <h3>Vorname Nachname</h3>
+        <p class="role">Kassenwartin / Kassenwart</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar-wrap">👤</div>
+        <h3>Vorname Nachname</h3>
+        <p class="role">Schriftführerin / Schriftführer</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <!-- ══ MITMACHEN / DOWNLOAD ══ -->
+  <section id="mitmachen" class="section">
+    <div class="download-box">
+      <h2>Jetzt Mitglied werden!</h2>
+      <p>Als Fördermitglied unterstützt du die Kita WirbelWind direkt. Der Mitgliedsbeitrag beträgt [XX] € im Jahr.</p>
+      <div class="pdf-pill">
+        📄 Anmeldeformular_Foerderverein_WirbelWind.pdf
+      </div>
+      <br>
+      <!-- href unten durch den echten Link zur PDF ersetzen -->
+      <a href="Anmeldeformular_Foerderverein_WirbelWind.pdf" class="btn btn-primary" download>
+        Formular herunterladen
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <p>Förderverein Kita WirbelWind e.V. &nbsp;·&nbsp; Twistringen</p>
+    <p>
+      <a href="mailto:info@wirbelwind-verein.de">info@wirbelwind-verein.de</a>
+      &nbsp;·&nbsp;
+      <a href="#">Impressum</a>
+      &nbsp;·&nbsp;
+      <a href="#">Datenschutz</a>
+    </p>
+    <p style="margin-top:0.75rem; opacity:0.6;">© 2024 Förderverein Kita WirbelWind</p>
+  </footer>
+
+</body>
+</html>
