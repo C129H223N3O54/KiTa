@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung – Förderverein Kita WirbelWind</title>
+  <style>
+    /* Lokale Schriftarten – keine Verbindung zu Google */
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:400; font-display:swap; src:url('fonts/Nunito-400.woff2') format('woff2'); }
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:600; font-display:swap; src:url('fonts/Nunito-600.woff2') format('woff2'); }
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:700; font-display:swap; src:url('fonts/Nunito-700.woff2') format('woff2'); }
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:800; font-display:swap; src:url('fonts/Nunito-800.woff2') format('woff2'); }
+    @font-face { font-family:'Baloo 2'; font-style:normal; font-weight:700; font-display:swap; src:url('fonts/Baloo2-700.woff2') format('woff2'); }
+    @font-face { font-family:'Baloo 2'; font-style:normal; font-weight:800; font-display:swap; src:url('fonts/Baloo2-800.woff2') format('woff2'); }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7faf5;
+      --surface: #ffffff;
+      --text: #213024;
+      --text-muted: #5d6e60;
+      --border: rgba(60,120,70,0.12);
+      --green: #4caf50;
+      --green-dark: #2e7d32;
+      --green-light: #e8f5e9;
+      --red: #ef4444;
+      --yellow: #fbbf24;
+      --sky: #4fb6e8;
+      --purple: #8b5cf6;
+      --radius-lg: 20px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10160f;
+        --surface: #1a2418;
+        --text: #ecf3ea;
+        --text-muted: #9bb09c;
+        --border: rgba(255,255,255,0.08);
+      }
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--surface);
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 14px rgba(40,90,40,0.08);
+    }
+
+    .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-brand img { height: 42px; width: auto; display: block; }
+    .nav-brand span {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.05rem; font-weight: 800; color: var(--green-dark);
+      display: none;
+    }
+    @media (min-width: 480px) { .nav-brand span { display: inline; } }
+
+    .nav-links { display: flex; gap: 1.4rem; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none;
+      font-size: 0.875rem; font-weight: 700; transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--green-dark); }
+
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3.5rem;
+    }
+
+    .page-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 2rem; font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .divider {
+      width: 56px; height: 5px;
+      background: linear-gradient(90deg, var(--red), var(--yellow), var(--green), var(--sky), var(--purple));
+      border-radius: 4px;
+      margin: 0.5rem 0 2rem;
+    }
+
+    h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.25rem; font-weight: 700;
+      margin: 2rem 0 0.6rem;
+      color: var(--green-dark);
+    }
+
+    h3 {
+      font-size: 1.02rem; font-weight: 800;
+      margin: 1.3rem 0 0.4rem;
+    }
+
+    p { margin-bottom: 0.9rem; }
+    ul { margin: 0 0 0.9rem 1.25rem; }
+    li { margin-bottom: 0.35rem; }
+
+    .card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    a { color: var(--green-dark); }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: var(--green-light);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    footer a:hover { color: #fff; }
+    footer p + p { margin-top: 0.4rem; }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--green-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">
+      <img src="logo.png" alt="Förderverein Kita WirbelWind Logo">
+      <span>Förderverein WirbelWind</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Startseite</a>
+      <a href="impressum.html">Impressum</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <h1 class="page-title">Datenschutzerklärung</h1>
+    <div class="divider"></div>
+
+    <h2>1. Datenschutz auf einen Blick</h2>
+    <p>
+      Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website ist ein
+      reines Informationsangebot des Vereins. Wir erheben personenbezogene Daten nur
+      im technisch notwendigen Umfang, den der Betrieb der Website mit sich bringt,
+      sowie wenn Sie uns von sich aus kontaktieren.
+    </p>
+
+    <h2>2. Verantwortliche Stelle</h2>
+    <div class="card">
+      <p>
+        <strong>Förderverein Kita WirbelWind e.V.</strong><br>
+        [Straße und Hausnummer]<br>
+        [PLZ] Twistringen<br>
+        Deutschland<br>
+        E-Mail: <a href="mailto:info@wirbelwind-verein.de">info@wirbelwind-verein.de</a>
+      </p>
+    </div>
+    <p>
+      Verantwortliche Stelle ist die natürliche oder juristische Person, die allein
+      oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von
+      personenbezogenen Daten entscheidet.
+    </p>
+
+    <h2>3. Hosting über GitHub Pages</h2>
+    <p>
+      Diese Website wird bei GitHub Pages gehostet, einem Dienst der GitHub Inc.,
+      88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (Tochterunternehmen
+      der Microsoft Corporation). Beim Aufruf unserer Website werden durch GitHub
+      technische Zugriffsdaten verarbeitet, die Ihr Browser automatisch übermittelt.
+      Dazu gehören insbesondere:
+    </p>
+    <ul>
+      <li>Ihre IP-Adresse</li>
+      <li>Datum und Uhrzeit des Zugriffs</li>
+      <li>die aufgerufene Seite / angeforderte Datei</li>
+      <li>Browsertyp und Betriebssystem</li>
+      <li>gegebenenfalls die zuvor besuchte Seite (Referrer)</li>
+    </ul>
+    <p>
+      Diese Verarbeitung ist technisch erforderlich, um die Website bereitzustellen
+      und ihre Stabilität und Sicherheit zu gewährleisten. Rechtsgrundlage ist
+      Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und
+      funktionsfähigen Darstellung unseres Internetauftritts).
+    </p>
+    <p>
+      Da GitHub Daten auch auf Servern in den USA verarbeiten kann, weisen wir darauf
+      hin, dass hierbei eine Datenübermittlung in ein Drittland stattfinden kann.
+      Microsoft/GitHub ist unter dem EU-US Data Privacy Framework zertifiziert.
+      Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub:
+      <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">
+      GitHub Privacy Statement</a>.
+    </p>
+
+    <h2>4. Schriftarten</h2>
+    <p>
+      Zur einheitlichen Darstellung verwendet diese Website Schriftarten, die lokal
+      auf dem Server dieser Website bereitgestellt und mit dem Seitenaufruf geladen
+      werden. Es findet dabei keine Verbindung zu Servern Dritter (z. B. Google Fonts)
+      und keine Übermittlung Ihrer Daten an Dritte statt.
+    </p>
+
+    <h2>5. Kontaktaufnahme per E-Mail</h2>
+    <p>
+      Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben (z. B. Name und
+      E-Mail-Adresse) zur Bearbeitung Ihrer Anfrage und für den Fall von
+      Anschlussfragen bei uns gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
+      DSGVO (Anbahnung oder Erfüllung eines Vertrags bzw. einer Mitgliedschaft) oder
+      lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Diese
+      Daten geben wir nicht ohne Ihre Einwilligung weiter und löschen sie, sobald sie
+      für den Zweck der Verarbeitung nicht mehr erforderlich sind.
+    </p>
+
+    <h2>6. Mitgliedsantrag / Anmeldeformular</h2>
+    <p>
+      Auf unserer Website stellen wir ein Anmeldeformular zum Download bereit. Die
+      Verarbeitung der darin angegebenen Daten erfolgt ausschließlich zum Zweck der
+      Begründung und Verwaltung der Vereinsmitgliedschaft auf Grundlage von
+      Art. 6 Abs. 1 lit. b DSGVO. Die ausgefüllten Formulare werden von Ihnen selbst
+      an den Verein übermittelt (nicht automatisch über die Website).
+    </p>
+
+    <h2>7. Cookies</h2>
+    <p>
+      Diese Website setzt selbst keine Cookies und verwendet keine Tracking- oder
+      Analyse-Tools.
+    </p>
+
+    <h2>8. Ihre Rechte</h2>
+    <p>Ihnen stehen nach der DSGVO folgende Rechte zu:</p>
+    <ul>
+      <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Widerspruchsrecht gegen die Verarbeitung (Art. 21 DSGVO)</li>
+    </ul>
+    <p>
+      Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an die oben genannte
+      verantwortliche Stelle.
+    </p>
+
+    <h2>9. Beschwerderecht bei der Aufsichtsbehörde</h2>
+    <p>
+      Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die
+      Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Für Niedersachsen
+      ist dies die Landesbeauftragte für den Datenschutz Niedersachsen,
+      Prinzenstraße 5, 30159 Hannover.
+    </p>
+
+    <h2>10. Aktualität</h2>
+    <p>
+      Diese Datenschutzerklärung hat den Stand [Monat/Jahr]. Durch die
+      Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher
+      Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen.
+    </p>
+
+    <div class="note">
+      <strong>Hinweis zum Ausfüllen:</strong> Bitte die mit [eckigen Klammern]
+      markierten Angaben ergänzen (Anschrift, Stand) und diesen Hinweis anschließend
+      löschen. Prüft außerdem, ob alle beschriebenen Punkte tatsächlich auf eure Seite
+      zutreffen. Im Zweifel bitte einen aktuellen Datenschutz-Generator nutzen oder
+      fachkundig gegenlesen lassen.
+    </div>
+
+    <a class="back-link" href="index.html">&larr; Zurück zur Startseite</a>
+  </main>
+
+  <footer>
+    <p>Förderverein Kita WirbelWind e.V. &nbsp;·&nbsp; Twistringen</p>
+    <p>
+      <a href="mailto:info@wirbelwind-verein.de">info@wirbelwind-verein.de</a>
+      &nbsp;·&nbsp;
+      <a href="impressum.html">Impressum</a>
+      &nbsp;·&nbsp;
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+  </footer>
+
+</body>
+</html>

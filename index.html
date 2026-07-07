@@ -4,9 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Förderverein Kita WirbelWind</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
   <style>
+    /* Lokale Schriftarten – keine Verbindung zu Google */
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:400; font-display:swap; src:url('fonts/Nunito-400.woff2') format('woff2'); }
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:600; font-display:swap; src:url('fonts/Nunito-600.woff2') format('woff2'); }
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:700; font-display:swap; src:url('fonts/Nunito-700.woff2') format('woff2'); }
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:800; font-display:swap; src:url('fonts/Nunito-800.woff2') format('woff2'); }
+    @font-face { font-family:'Baloo 2'; font-style:normal; font-weight:700; font-display:swap; src:url('fonts/Baloo2-700.woff2') format('woff2'); }
+    @font-face { font-family:'Baloo 2'; font-style:normal; font-weight:800; font-display:swap; src:url('fonts/Baloo2-800.woff2') format('woff2'); }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -449,7 +455,7 @@
   <section id="vorstand" class="section">
     <h2 class="section-title">Unser Vorstand</h2>
     <div class="divider"></div>
-    <p class="section-sub">Der Förderverein wird ehrenamtlich von Eltern oder ehemaligen Eltern der Kita WirbelWind geführt.</p>
+    <p class="section-sub">Der Förderverein wird ehrenamtlich von Eltern der Kita WirbelWind geführt.</p>
 
     <div class="vorstand">
 
@@ -499,7 +505,7 @@
   <section id="mitmachen" class="section">
     <div class="download-box">
       <h2>Jetzt Mitglied werden!</h2>
-      <p>Als Fördermitglied unterstützt du die Kita WirbelWind direkt. Der Mitgliedsbeitrag beträgt mindestens 12 € im Jahr. Dieser kann freiwilig erhöht werden.</p>
+      <p>Als Fördermitglied unterstützt du die Kita WirbelWind direkt. Der Mitgliedsbeitrag beträgt [XX] € im Jahr.</p>
       <div class="pdf-pill">
         📄 Anmeldeformular_Foerderverein_WirbelWind.pdf
       </div>
@@ -517,9 +523,9 @@
     <p>
       <a href="mailto:info@wirbelwind-verein.de">info@wirbelwind-verein.de</a>
       &nbsp;·&nbsp;
-      <a href="#">Impressum</a>
+      <a href="impressum.html">Impressum</a>
       &nbsp;·&nbsp;
-      <a href="#">Datenschutz</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </p>
     <p style="margin-top:0.75rem; opacity:0.6;">© 2024 Förderverein Kita WirbelWind</p>
   </footer>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – Förderverein Kita WirbelWind</title>
+  <style>
+    /* Lokale Schriftarten – keine Verbindung zu Google */
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:400; font-display:swap; src:url('fonts/Nunito-400.woff2') format('woff2'); }
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:600; font-display:swap; src:url('fonts/Nunito-600.woff2') format('woff2'); }
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:700; font-display:swap; src:url('fonts/Nunito-700.woff2') format('woff2'); }
+    @font-face { font-family:'Nunito'; font-style:normal; font-weight:800; font-display:swap; src:url('fonts/Nunito-800.woff2') format('woff2'); }
+    @font-face { font-family:'Baloo 2'; font-style:normal; font-weight:700; font-display:swap; src:url('fonts/Baloo2-700.woff2') format('woff2'); }
+    @font-face { font-family:'Baloo 2'; font-style:normal; font-weight:800; font-display:swap; src:url('fonts/Baloo2-800.woff2') format('woff2'); }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7faf5;
+      --surface: #ffffff;
+      --text: #213024;
+      --text-muted: #5d6e60;
+      --border: rgba(60,120,70,0.12);
+      --green: #4caf50;
+      --green-dark: #2e7d32;
+      --green-light: #e8f5e9;
+      --red: #ef4444;
+      --yellow: #fbbf24;
+      --sky: #4fb6e8;
+      --purple: #8b5cf6;
+      --radius-lg: 20px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10160f;
+        --surface: #1a2418;
+        --text: #ecf3ea;
+        --text-muted: #9bb09c;
+        --border: rgba(255,255,255,0.08);
+      }
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--surface);
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 14px rgba(40,90,40,0.08);
+    }
+
+    .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-brand img { height: 42px; width: auto; display: block; }
+    .nav-brand span {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.05rem; font-weight: 800; color: var(--green-dark);
+      display: none;
+    }
+    @media (min-width: 480px) { .nav-brand span { display: inline; } }
+
+    .nav-links { display: flex; gap: 1.4rem; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none;
+      font-size: 0.875rem; font-weight: 700; transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--green-dark); }
+
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3.5rem;
+    }
+
+    .page-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 2rem; font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .divider {
+      width: 56px; height: 5px;
+      background: linear-gradient(90deg, var(--red), var(--yellow), var(--green), var(--sky), var(--purple));
+      border-radius: 4px;
+      margin: 0.5rem 0 2rem;
+    }
+
+    h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.25rem; font-weight: 700;
+      margin: 2rem 0 0.6rem;
+      color: var(--green-dark);
+    }
+
+    p { margin-bottom: 0.9rem; }
+
+    .card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    a { color: var(--green-dark); }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: var(--green-light);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    footer a:hover { color: #fff; }
+    footer p + p { margin-top: 0.4rem; }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--green-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">
+      <img src="logo.png" alt="Förderverein Kita WirbelWind Logo">
+      <span>Förderverein WirbelWind</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Startseite</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <h1 class="page-title">Impressum</h1>
+    <div class="divider"></div>
+
+    <p>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG).</p>
+
+    <div class="card">
+      <p>
+        <strong>Förderverein Kita WirbelWind e.V.</strong><br>
+        [Straße und Hausnummer]<br>
+        [PLZ] Twistringen<br>
+        Deutschland
+      </p>
+    </div>
+
+    <h2>Vertreten durch</h2>
+    <p>
+      Monika Heinlein (1. Vorsitzende)<br>
+      Henrik Gerlach (2. Vorsitzender)
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      E-Mail: <a href="mailto:info@wirbelwind-verein.de">info@wirbelwind-verein.de</a><br>
+      Telefon: [optional: Telefonnummer]
+    </p>
+
+    <h2>Registereintrag</h2>
+    <p>
+      Eintragung im Vereinsregister.<br>
+      Registergericht: [z. B. Amtsgericht Walsrode]<br>
+      Registernummer: [VR-Nummer]
+    </p>
+
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>
+      [Name der verantwortlichen Person]<br>
+      [Anschrift wie oben]
+    </p>
+
+    <h2>Haftung für Inhalte</h2>
+    <p>
+      Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf
+      diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG
+      sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder
+      gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen,
+      die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung
+      oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen
+      bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem
+      Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden
+      von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+    </p>
+
+    <h2>Haftung für Links</h2>
+    <p>
+      Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf
+      deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden
+      Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist
+      stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die
+      verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
+      überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht
+      erkennbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links
+      umgehend entfernen.
+    </p>
+
+    <h2>Urheberrecht</h2>
+    <p>
+      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+      unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche
+      gekennzeichnet. Downloads und Kopien dieser Seite sind nur für den privaten,
+      nicht kommerziellen Gebrauch gestattet.
+    </p>
+
+    <div class="note">
+      <strong>Hinweis zum Ausfüllen:</strong> Bitte alle mit [eckigen Klammern]
+      markierten Angaben durch die tatsächlichen Vereinsdaten ersetzen und diesen
+      Hinweis anschließend löschen. Die genannten Vertretungs- und Registerangaben
+      bitte mit der aktuellen Satzung bzw. dem Vereinsregisterauszug abgleichen.
+    </div>
+
+    <a class="back-link" href="index.html">&larr; Zurück zur Startseite</a>
+  </main>
+
+  <footer>
+    <p>Förderverein Kita WirbelWind e.V. &nbsp;·&nbsp; Twistringen</p>
+    <p>
+      <a href="mailto:info@wirbelwind-verein.de">info@wirbelwind-verein.de</a>
+      &nbsp;·&nbsp;
+      <a href="impressum.html">Impressum</a>
+      &nbsp;·&nbsp;
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+  </footer>
+
+</body>
+</html>
