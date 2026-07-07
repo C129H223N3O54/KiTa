@@ -267,8 +267,16 @@
     /* ── VORSTAND ── */
     .vorstand {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .vorstand { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 400px) {
+      .vorstand { grid-template-columns: 1fr; }
     }
 
     .person {
